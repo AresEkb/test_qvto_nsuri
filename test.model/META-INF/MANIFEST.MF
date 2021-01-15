@@ -1,15 +1,17 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: test_qvto_nsuri;singleton:=true
-Automatic-Module-Name: test_qvto_nsuri
+Bundle-SymbolicName: test.model;singleton:=true
+Automatic-Module-Name: test.model
 Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport,
+Export-Package: test.model.my,
+ test.model.my.impl,
+ test.model.my.util
+Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.ocl.pivot;visibility:=reexport,
- org.eclipse.m2m.qvt.oml
+ org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy

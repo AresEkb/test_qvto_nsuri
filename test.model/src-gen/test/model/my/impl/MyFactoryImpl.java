@@ -1,6 +1,6 @@
 /**
  */
-package test.impl;
+package test.model.my.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import test.*;
+import test.model.my.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,24 +18,23 @@ import test.*;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
+public class MyFactoryImpl extends EFactoryImpl implements MyFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static TestFactory init() {
+	public static MyFactory init() {
 		try {
-			TestFactory theTestFactory = (TestFactory)EPackage.Registry.INSTANCE.getEFactory(TestPackage.eNS_URI);
-			if (theTestFactory != null) {
-				return theTestFactory;
+			MyFactory theMyFactory = (MyFactory) EPackage.Registry.INSTANCE.getEFactory(MyPackage.eNS_URI);
+			if (theMyFactory != null) {
+				return theMyFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new TestFactoryImpl();
+		return new MyFactoryImpl();
 	}
 
 	/**
@@ -44,7 +43,7 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TestFactoryImpl() {
+	public MyFactoryImpl() {
 		super();
 	}
 
@@ -56,9 +55,10 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case TestPackage.MY_CLASS: return createMyClass();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case MyPackage.MY_CLASS:
+			return createMyClass();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -79,8 +79,8 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	 * @generated
 	 */
 	@Override
-	public TestPackage getTestPackage() {
-		return (TestPackage)getEPackage();
+	public MyPackage getMyPackage() {
+		return (MyPackage) getEPackage();
 	}
 
 	/**
@@ -90,8 +90,8 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	 * @generated
 	 */
 	@Deprecated
-	public static TestPackage getPackage() {
-		return TestPackage.eINSTANCE;
+	public static MyPackage getPackage() {
+		return MyPackage.eINSTANCE;
 	}
 
-} //TestFactoryImpl
+} //MyFactoryImpl

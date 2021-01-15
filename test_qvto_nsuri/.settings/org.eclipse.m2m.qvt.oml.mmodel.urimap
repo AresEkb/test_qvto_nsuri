@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="ASCII"?>
 <uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
-  <mapping sourceURI="http://example.com" targetURI="platform:/resource/test_qvto_nsuri/model/My.ecore"/>
+  <mapping sourceURI="http://www.example.org/my" targetURI="platform:/resource/test.model/model/my.ecore"/>
 </uriMap:MappingContainer>

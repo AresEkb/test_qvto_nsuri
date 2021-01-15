@@ -1,21 +1,18 @@
 /**
  */
-package test.impl;
+package test.model.my.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.ocl.pivot.PivotPackage;
 
-import org.eclipse.sirius.viewpoint.ViewpointPackage;
-
-import test.MyClass;
-import test.TestFactory;
-import test.TestPackage;
+import test.model.my.MyClass;
+import test.model.my.MyFactory;
+import test.model.my.MyPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +20,7 @@ import test.TestPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TestPackageImpl extends EPackageImpl implements TestPackage {
+public class MyPackageImpl extends EPackageImpl implements MyPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -42,12 +39,12 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see test.TestPackage#eNS_URI
+	 * @see test.model.my.MyPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private TestPackageImpl() {
-		super(eNS_URI, TestFactory.eINSTANCE);
+	private MyPackageImpl() {
+		super(eNS_URI, MyFactory.eINSTANCE);
 	}
 
 	/**
@@ -60,7 +57,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 *
-	 * <p>This method is used to initialize {@link TestPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link MyPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -69,32 +66,32 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static TestPackage init() {
-		if (isInited) return (TestPackage)EPackage.Registry.INSTANCE.getEPackage(TestPackage.eNS_URI);
+	public static MyPackage init() {
+		if (isInited)
+			return (MyPackage) EPackage.Registry.INSTANCE.getEPackage(MyPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredTestPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		TestPackageImpl theTestPackage = registeredTestPackage instanceof TestPackageImpl ? (TestPackageImpl)registeredTestPackage : new TestPackageImpl();
+		Object registeredMyPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		MyPackageImpl theMyPackage = registeredMyPackage instanceof MyPackageImpl ? (MyPackageImpl) registeredMyPackage
+				: new MyPackageImpl();
 
 		isInited = true;
 
 		// Initialize simple dependencies
 		PivotPackage.eINSTANCE.eClass();
-		ViewpointPackage.eINSTANCE.eClass();
-		EcorePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
-		theTestPackage.createPackageContents();
+		theMyPackage.createPackageContents();
 
 		// Initialize created meta-data
-		theTestPackage.initializePackageContents();
+		theMyPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theTestPackage.freeze();
+		theMyPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(TestPackage.eNS_URI, theTestPackage);
-		return theTestPackage;
+		EPackage.Registry.INSTANCE.put(MyPackage.eNS_URI, theMyPackage);
+		return theMyPackage;
 	}
 
 	/**
@@ -114,7 +111,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 */
 	@Override
 	public EReference getMyClass_Ref1() {
-		return (EReference)myClassEClass.getEStructuralFeatures().get(0);
+		return (EReference) myClassEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -123,18 +120,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMyClass_Ref2() {
-		return (EReference)myClassEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public TestFactory getTestFactory() {
-		return (TestFactory)getEFactoryInstance();
+	public MyFactory getMyFactory() {
+		return (MyFactory) getEFactoryInstance();
 	}
 
 	/**
@@ -152,13 +139,13 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated)
+			return;
 		isCreated = true;
 
 		// Create classes and their features
 		myClassEClass = createEClass(MY_CLASS);
 		createEReference(myClassEClass, MY_CLASS__REF1);
-		createEReference(myClassEClass, MY_CLASS__REF2);
 	}
 
 	/**
@@ -176,7 +163,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized)
+			return;
 		isInitialized = true;
 
 		// Initialize package
@@ -185,8 +173,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		PivotPackage thePivotPackage = (PivotPackage)EPackage.Registry.INSTANCE.getEPackage(PivotPackage.eNS_URI);
-		ViewpointPackage theViewpointPackage = (ViewpointPackage)EPackage.Registry.INSTANCE.getEPackage(ViewpointPackage.eNS_URI);
+		PivotPackage thePivotPackage = (PivotPackage) EPackage.Registry.INSTANCE.getEPackage(PivotPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -196,11 +183,12 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(myClassEClass, MyClass.class, "MyClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMyClass_Ref1(), thePivotPackage.getState(), null, "ref1", null, 0, 1, MyClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMyClass_Ref2(), theViewpointPackage.getDModel(), null, "ref2", null, 0, 1, MyClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMyClass_Ref1(), thePivotPackage.getState(), null, "ref1", null, 0, 1, MyClass.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
 	}
 
-} //TestPackageImpl
+} //MyPackageImpl

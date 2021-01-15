@@ -1,13 +1,13 @@
 /**
  */
-package test.util;
+package test.model.my.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import test.*;
+import test.model.my.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,17 +19,17 @@ import test.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see test.TestPackage
+ * @see test.model.my.MyPackage
  * @generated
  */
-public class TestSwitch<T> extends Switch<T> {
+public class MySwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static TestPackage modelPackage;
+	protected static MyPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -37,9 +37,9 @@ public class TestSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TestSwitch() {
+	public MySwitch() {
 		if (modelPackage == null) {
-			modelPackage = TestPackage.eINSTANCE;
+			modelPackage = MyPackage.eINSTANCE;
 		}
 	}
 
@@ -66,24 +66,26 @@ public class TestSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case TestPackage.MY_CLASS: {
-				MyClass myClass = (MyClass)theEObject;
-				T result = caseMyClass(myClass);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		case MyPackage.MY_CLASS: {
+			MyClass myClass = (MyClass) theEObject;
+			T result = caseMyClass(myClass);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>My Class</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Class</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>My Class</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Class</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -107,4 +109,4 @@ public class TestSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //TestSwitch
+} //MySwitch

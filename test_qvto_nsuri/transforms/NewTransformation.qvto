@@ -1,4 +1,4 @@
-modeltype MY uses 'http://example.com';
+modeltype MY uses 'http://www.example.org/my';
 modeltype OCL uses 'http://www.eclipse.org/ocl/2015/Pivot';
 
 transformation NewTransformation(in my : MY);

@@ -1,6 +1,6 @@
 /**
  */
-package test;
+package test.model.my;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -18,18 +18,18 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see test.TestFactory
+ * @see test.model.my.MyFactory
  * @model kind="package"
  * @generated
  */
-public interface TestPackage extends EPackage {
+public interface MyPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "test";
+	String eNAME = "my";
 
 	/**
 	 * The package namespace URI.
@@ -37,7 +37,7 @@ public interface TestPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://example.com";
+	String eNS_URI = "http://www.example.org/my";
 
 	/**
 	 * The package namespace name.
@@ -45,7 +45,7 @@ public interface TestPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "test";
+	String eNS_PREFIX = "my";
 
 	/**
 	 * The singleton instance of the package.
@@ -53,14 +53,14 @@ public interface TestPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	TestPackage eINSTANCE = test.impl.TestPackageImpl.init();
+	MyPackage eINSTANCE = test.model.my.impl.MyPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link test.impl.MyClassImpl <em>My Class</em>}' class.
+	 * The meta object id for the '{@link test.model.my.impl.MyClassImpl <em>Class</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see test.impl.MyClassImpl
-	 * @see test.impl.TestPackageImpl#getMyClass()
+	 * @see test.model.my.impl.MyClassImpl
+	 * @see test.model.my.impl.MyPackageImpl#getMyClass()
 	 * @generated
 	 */
 	int MY_CLASS = 0;
@@ -75,25 +75,16 @@ public interface TestPackage extends EPackage {
 	int MY_CLASS__REF1 = 0;
 
 	/**
-	 * The feature id for the '<em><b>Ref2</b></em>' reference.
+	 * The number of structural features of the '<em>Class</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MY_CLASS__REF2 = 1;
+	int MY_CLASS_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of structural features of the '<em>My Class</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MY_CLASS_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>My Class</em>' class.
+	 * The number of operations of the '<em>Class</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -101,38 +92,26 @@ public interface TestPackage extends EPackage {
 	 */
 	int MY_CLASS_OPERATION_COUNT = 0;
 
-
 	/**
-	 * Returns the meta object for class '{@link test.MyClass <em>My Class</em>}'.
+	 * Returns the meta object for class '{@link test.model.my.MyClass <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>My Class</em>'.
-	 * @see test.MyClass
+	 * @return the meta object for class '<em>Class</em>'.
+	 * @see test.model.my.MyClass
 	 * @generated
 	 */
 	EClass getMyClass();
 
 	/**
-	 * Returns the meta object for the reference '{@link test.MyClass#getRef1 <em>Ref1</em>}'.
+	 * Returns the meta object for the reference '{@link test.model.my.MyClass#getRef1 <em>Ref1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Ref1</em>'.
-	 * @see test.MyClass#getRef1()
+	 * @see test.model.my.MyClass#getRef1()
 	 * @see #getMyClass()
 	 * @generated
 	 */
 	EReference getMyClass_Ref1();
-
-	/**
-	 * Returns the meta object for the reference '{@link test.MyClass#getRef2 <em>Ref2</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Ref2</em>'.
-	 * @see test.MyClass#getRef2()
-	 * @see #getMyClass()
-	 * @generated
-	 */
-	EReference getMyClass_Ref2();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -141,7 +120,7 @@ public interface TestPackage extends EPackage {
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
-	TestFactory getTestFactory();
+	MyFactory getMyFactory();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,11 +137,11 @@ public interface TestPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link test.impl.MyClassImpl <em>My Class</em>}' class.
+		 * The meta object literal for the '{@link test.model.my.impl.MyClassImpl <em>Class</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see test.impl.MyClassImpl
-		 * @see test.impl.TestPackageImpl#getMyClass()
+		 * @see test.model.my.impl.MyClassImpl
+		 * @see test.model.my.impl.MyPackageImpl#getMyClass()
 		 * @generated
 		 */
 		EClass MY_CLASS = eINSTANCE.getMyClass();
@@ -175,14 +154,6 @@ public interface TestPackage extends EPackage {
 		 */
 		EReference MY_CLASS__REF1 = eINSTANCE.getMyClass_Ref1();
 
-		/**
-		 * The meta object literal for the '<em><b>Ref2</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MY_CLASS__REF2 = eINSTANCE.getMyClass_Ref2();
-
 	}
 
-} //TestPackage
+} //MyPackage

@@ -7,11 +7,11 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated My -->
+      <!-- @generated my -->
       <package
-            uri="http://example.com"
-            class="test.TestPackage"
-            genModel="model/My.genmodel"/>
+            uri="http://www.example.org/my"
+            class="test.model.my.MyPackage"
+            genModel="model/my.genmodel"/>
    </extension>
 
 </plugin>

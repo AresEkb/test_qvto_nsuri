@@ -1,6 +1,6 @@
 /**
  */
-package test.util;
+package test.model.my.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -9,24 +9,24 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import test.*;
+import test.model.my.*;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see test.TestPackage
+ * @see test.model.my.MyPackage
  * @generated
  */
-public class TestAdapterFactory extends AdapterFactoryImpl {
+public class MyAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static TestPackage modelPackage;
+	protected static MyPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -34,9 +34,9 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TestAdapterFactory() {
+	public MyAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = TestPackage.eINSTANCE;
+			modelPackage = MyPackage.eINSTANCE;
 		}
 	}
 
@@ -54,7 +54,7 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -65,17 +65,17 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TestSwitch<Adapter> modelSwitch =
-		new TestSwitch<Adapter>() {
-			@Override
-			public Adapter caseMyClass(MyClass object) {
-				return createMyClassAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+	protected MySwitch<Adapter> modelSwitch = new MySwitch<Adapter>() {
+		@Override
+		public Adapter caseMyClass(MyClass object) {
+			return createMyClassAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -87,18 +87,17 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
-
 	/**
-	 * Creates a new adapter for an object of class '{@link test.MyClass <em>My Class</em>}'.
+	 * Creates a new adapter for an object of class '{@link test.model.my.MyClass <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see test.MyClass
+	 * @see test.model.my.MyClass
 	 * @generated
 	 */
 	public Adapter createMyClassAdapter() {
@@ -117,4 +116,4 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //TestAdapterFactory
+} //MyAdapterFactory
