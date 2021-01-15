@@ -1,0 +1,12 @@
+modeltype MY uses 'http://example.com';
+modeltype OCL uses 'http://www.eclipse.org/ocl/2015/Pivot';
+
+transformation NewTransformation(in my : MY);
+
+main() {
+}
+
+mapping MY::MyClass::toMyClass()
+{
+    var q1 : OCL::State := self.ref1.deepclone();
+}
